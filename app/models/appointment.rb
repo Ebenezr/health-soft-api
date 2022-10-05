@@ -1,5 +1,5 @@
 class Appointment < ApplicationRecord
-    belongs_to :doctor, -> { order "appointment_date DESC" }
+    belongs_to :doctor
     belongs_to :patient
     belongs_to :nurse
 
