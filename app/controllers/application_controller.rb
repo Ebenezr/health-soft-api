@@ -1,2 +1,31 @@
 class ApplicationController < ActionController::API
+
+     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
+
+     def encode_token(payload)
+        JWT.encode(payload, 'secret')
+     end
+
+     def decode_token
+        # Authrization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiMTIzIn0.AOXUao_6a_LbIcwkaZU574fPqvW6mPvHhwKC7Fatuws
+        auth_header = request.headers['Authorization']
+        if auth_header
+            token = auth_header.split(' ')[1]
+            begin
+                JWT.decode(token, 'secret',  true, algorithm: 'HS256')
+            rescue JWT::DecodeError
+                nil
+            end
+        end
+     end
+
+     private
+
+     def render_unprocessable_entity_response(exception)
+        render json: { errors: exception.record.errors.full_messages }, status: :unprocessable_entity
+     end
+
+    def user_params
+        params.permit(:first_name, :last_name, :email, :password, :phone, :designation)
+    end  
 end
