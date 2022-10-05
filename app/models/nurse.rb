@@ -1,5 +1,6 @@
 class Nurse < ApplicationRecord
     
+    has_many :appointments
     validates :first_name,:last_name, :phone, :email, :designation, :password, presence: true
     validates :email, uniqueness: true
     validate :email, format: {with: URI::MailTo::EMAIL_REGEXP }
