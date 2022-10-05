@@ -10,4 +10,6 @@ class Doctor < ApplicationRecord
         if: -> {new_record? || !password.nil?}
     end
 
+    has_secure_password
+
 end

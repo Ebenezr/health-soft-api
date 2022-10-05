@@ -7,4 +7,6 @@ class Nurse < ApplicationRecord
         length:  {minimum: 6} , 
         if: -> {new_record? || !password.nil?}
     end
+
+    has_secure_password
 end
