@@ -19,6 +19,19 @@ class ApplicationController < ActionController::API
         end
      end
 
+     def authorized_user
+        decode_token = decode_token()
+        if decode_token
+            user_id = decode_token[0]['user_id']
+            @user = User.find_by_id(user_id)
+        end
+     end
+
+     def authorize
+        render json: {message: 'You have to log in first'}, status: :unauthorized unless
+        authorized_user
+     end
+
      private
 
      def render_unprocessable_entity_response(exception)
