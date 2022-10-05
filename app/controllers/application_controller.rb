@@ -41,4 +41,8 @@ class ApplicationController < ActionController::API
     def user_params
         params.permit(:first_name, :last_name, :email, :password, :phone, :designation)
     end  
+
+    def appointments_params
+        params.permit(:doctor_id, :patient_id, :serial_no, :appointment_date, :appointment_time)
+    end
 end
