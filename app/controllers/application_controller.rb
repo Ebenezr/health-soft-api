@@ -47,6 +47,18 @@ class ApplicationController < ActionController::API
     end
 
      def patient_params
-        params.permit(:first_name, :last_name, :gender, :dob, :marital_status)
+        params.require(:patient).permit(
+            :national_id,
+            :first_name, 
+            :last_name, 
+            :gender, 
+            :dob, 
+            :marital_status, 
+            :patient_contacts_attributes => [:patient_id, :phone, :email, :address, :county, :estate, :_destroy])
+    end
+
+
+    def vitals_params
+        params.permit(:patient_id, :bp_diastolic, :bp_systolic, :temperature, :notes)
     end
 end

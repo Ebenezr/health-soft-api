@@ -2,6 +2,8 @@ class PatientsController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
     before_action :authorize
 
+    #before_action :set_patient, only: [:show, :update, :destroy]
+
     
     def index
         patients = Patient.all
@@ -14,8 +16,14 @@ class PatientsController < ApplicationController
     end
 
     def create
-        patient = Patient.create!(patient_params)
-        render json: patient, status: :created
+        patient = Patient.new(patient_params)
+        if patient.save
+            render json: patient, status: :created
+        else
+            render json: patient.errors.full_messages, 
+            status: :unprocessable_entity
+        end    
+        
     end 
 
     def update 

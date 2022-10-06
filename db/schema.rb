@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_05_111114) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_06_064922) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -83,6 +83,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_05_111114) do
     t.string "marital_status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "national_id"
+    t.index ["national_id"], name: "index_patients_on_national_id", unique: true
   end
 
   add_foreign_key "appointments", "doctors"

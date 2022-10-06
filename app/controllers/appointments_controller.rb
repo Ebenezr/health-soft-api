@@ -1,5 +1,6 @@
 class AppointmentsController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
+
     before_action :authorize
 
     def index
@@ -19,7 +20,7 @@ class AppointmentsController < ApplicationController
 
     def update
         appointment = Appointment.find(params[:id])
-        appointment.update!(appointments_params)
+        appointment.update!(appointments_params.merge(nurse:@user))
         render json: appointment, status: :accepted
     end 
 

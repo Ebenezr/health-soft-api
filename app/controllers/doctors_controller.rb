@@ -3,8 +3,8 @@ class DoctorsController < ApplicationController
     before_action :authorize
     
     def index
-        nurses = Doctor.all
-        render json: nurses
+        doctors = Doctor.all
+        render json: doctors
     end
 
     def show
@@ -18,14 +18,14 @@ class DoctorsController < ApplicationController
     end 
 
     def update
-        @nurse = Doctor.find(params[:id])
-        @nurse.update!(user_params)
-        render json: @nurse, status: :accepted
+        @user = Doctor.find(params[:id])
+        @user.update!(user_params)
+        render json: @user, status: :accepted
     end 
 
     def destroy
-        @nurse = Doctor.find(params[:id])
-        @nurse.destroy
+        @user = Doctor.find(params[:id])
+        @user.destroy
 
         head :no_content
     end 
