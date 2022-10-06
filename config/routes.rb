@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :checkups, only: [:index, :show, :create, :update, :destroy] 
   # resources :patient_vitals
   resources :appointments, only: [:index, :show, :create, :update, :destroy] 
   resources :patients,  only: [:index, :show, :create, :update, :destroy] 

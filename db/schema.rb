@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_06_083224) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_06_091705) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -27,6 +27,23 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_06_083224) do
     t.index ["doctor_id"], name: "index_appointments_on_doctor_id"
     t.index ["nurse_id"], name: "index_appointments_on_nurse_id"
     t.index ["patient_id"], name: "index_appointments_on_patient_id"
+  end
+
+  create_table "checkups", force: :cascade do |t|
+    t.bigint "patient_id", null: false
+    t.bigint "doctor_id", null: false
+    t.bigint "visit_id"
+    t.text "symptoms"
+    t.string "diagnosis"
+    t.text "advice"
+    t.date "checkup_date"
+    t.date "next_visit"
+    t.text "comment"
+    t.text "hpi"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["doctor_id"], name: "index_checkups_on_doctor_id"
+    t.index ["patient_id"], name: "index_checkups_on_patient_id"
   end
 
   create_table "doctors", force: :cascade do |t|
@@ -90,6 +107,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_06_083224) do
   add_foreign_key "appointments", "doctors"
   add_foreign_key "appointments", "nurses"
   add_foreign_key "appointments", "patients"
+  add_foreign_key "checkups", "doctors"
+  add_foreign_key "checkups", "patients"
   add_foreign_key "patient_contacts", "patients"
   add_foreign_key "patient_vitals", "patients"
 end
