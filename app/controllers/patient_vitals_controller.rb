@@ -1,5 +1,6 @@
 class PatientVitalsController < ApplicationController
   before_action :set_patient_vital, only: %i[ show update destroy ]
+  before_action :authorize
 
   # GET /patient_vitals
   def index
@@ -15,27 +16,20 @@ class PatientVitalsController < ApplicationController
 
   # POST /patient_vitals
   def create
-    @patient_vital = PatientVital.new(patient_vital_params)
-
-    if @patient_vital.save
-      render json: @patient_vital, status: :created, location: @patient_vital
-    else
-      render json: @patient_vital.errors, status: :unprocessable_entity
-    end
+    @patient_vital = PatientVital.create!(patient_vital_params)
+    render json: @patient_vital, status: :created    
   end
 
   # PATCH/PUT /patient_vitals/1
   def update
-    if @patient_vital.update(patient_vital_params)
-      render json: @patient_vital
-    else
-      render json: @patient_vital.errors, status: :unprocessable_entity
-    end
+      @patient_vital.update!(patient_vital_params)
+      render json: @patient_vital, status: :accepted
   end
 
   # DELETE /patient_vitals/1
   def destroy
     @patient_vital.destroy
+    head :no_content
   end
 
   private
