@@ -1,5 +1,5 @@
 class Doctor < ApplicationRecord
-    has_many :appointments, -> { order "appointment_date DESC" }
+    has_many :appointments, -> { order "appointment_date DESC" }, dependent: :destroy
     has_many :patients ,through: :appointments
 
     validates :first_name,:last_name, :email, :designation, :password, presence: true
