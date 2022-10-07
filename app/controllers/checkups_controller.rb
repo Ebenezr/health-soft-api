@@ -1,5 +1,6 @@
 class CheckupsController < ApplicationController
 
+  before_action :set_checkup, only: [:show, :update, :destroy]
   before_action :authorize
   # GET /checkups
   def index

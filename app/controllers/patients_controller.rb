@@ -2,7 +2,7 @@ class PatientsController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
     before_action :authorize
 
-    #before_action :set_patient, only: [:show, :update, :destroy]
+    before_action :set_patient, only: [:show, :update, :destroy]
 
     
     def index
@@ -40,6 +40,10 @@ class PatientsController < ApplicationController
     end 
     
     private  
+
+    def set_patient
+      @patient = Patient.find(params[:id])
+    end
 
     def render_not_found_response
         render json: { error: "Patient not found" }, status: :not_found
