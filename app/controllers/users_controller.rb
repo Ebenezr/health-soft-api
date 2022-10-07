@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
     def create
-        @user = Nurse.find_by_email(user_params[:email]) || Doctor.find_by_email(user_params[:email])  
+        @user = Nurse.find_by_email(user_params[:email]) || Doctor.find_by_email(user_params[:email]) ||Admin.find_by_email(user_params[:email])
 
         if @user && @user.authenticate(user_params[:password])
             token = encode_token({user_id: @user.id})
