@@ -1,4 +1,13 @@
 class Doctor < ApplicationRecord
+
+
+     as_enum :role, [:admin, :doctor, :nurse], map: :string
+     after_initialize :set_default_role, :if => :new_record?
+    
+    def set_default_role
+        self.role ||= :doctor
+    end
+
     has_many :appointments, -> { order "appointment_date DESC" }, dependent: :destroy
     has_many :patients ,through: :appointments
 

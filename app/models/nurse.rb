@@ -1,5 +1,14 @@
 class Nurse < ApplicationRecord
+
+
+
+     as_enum :role, [:admin, :doctor, :nurse], map: :string
+    after_initialize :set_default_role, :if => :new_record?
     
+    def set_default_role
+        self.role ||= :nurse
+    end
+
     has_many :appointments
     
     validates :first_name,:last_name, :email, :designation, :password, presence: true

@@ -1,7 +1,7 @@
 class AppointmentsController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
 
-    before_action :authorize
+    before_action :authorize, except: [:show, :index] 
 
     def index
         appointments = Appointment.all

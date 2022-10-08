@@ -1,7 +1,7 @@
 class CheckupsController < ApplicationController
 
   before_action :set_checkup, only: [:show, :update, :destroy]
-  before_action :authorize
+  before_action :authorize,  except: [:show, :index] 
   # GET /checkups
   def index
     @checkups = Checkup.all

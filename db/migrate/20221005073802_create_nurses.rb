@@ -7,6 +7,7 @@ class CreateNurses < ActiveRecord::Migration[7.0]
       t.string :email
       t.string :password_digest
       t.string :designation
+      
 
       t.timestamps
     end
