@@ -1,6 +1,6 @@
 class PatientVitalsController < ApplicationController
   before_action :set_patient_vital, only: %i[ show update destroy ]
-  # before_action :authorize, except: [:show, :index] 
+  before_action :authorize, except: [:show, :index] 
 
   # GET /patient_vitals
   def index
