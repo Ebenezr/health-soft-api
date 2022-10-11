@@ -59,7 +59,7 @@ class ApplicationController < ActionController::API
             :address, 
             :county, 
             :estate, 
-            :_destroy
+            :_destroy)
     end
 
 
