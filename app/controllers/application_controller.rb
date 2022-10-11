@@ -53,8 +53,13 @@ class ApplicationController < ActionController::API
             :last_name, 
             :gender, 
             :dob, 
-            :marital_status, 
-            :patient_contacts_attributes => [:patient_id, :phone, :email, :address, :county, :estate, :_destroy])
+            :marital_status,  
+            :phone, 
+            :email, 
+            :address, 
+            :county, 
+            :estate, 
+            :_destroy
     end
 
 
