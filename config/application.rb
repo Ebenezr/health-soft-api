@@ -9,7 +9,7 @@ require "active_record/railtie"
 require "action_controller/railtie"
 # require "action_mailer/railtie"
 # require "action_mailbox/engine"
-require 'sprockets/railtie'
+# require 'sprockets/railtie'
 
 # require "action_text/engine"
 require "action_view/railtie"
