@@ -10,6 +10,8 @@ class Nurse < ApplicationRecord
     end
 
     has_many :appointments
+
+      has_one_attached :featured_image
     
     validates :first_name,:last_name, :email, :designation, :password, presence: true
     validates :email, uniqueness: true

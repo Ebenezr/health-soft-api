@@ -38,3 +38,5 @@ gem "jwt", "~> 2.5"
 gem "faker", "~> 2.23"
 
 gem 'simple_enum', '~> 2.3.0' , require: 'simple_enum/mongoid'
+
+gem 'cloudinary'

@@ -39,7 +39,7 @@ class ApplicationController < ActionController::API
      end
 
     def user_params
-        params.permit(:first_name, :last_name, :email, :password, :phone, :designation)
+        params.permit(:first_name, :last_name, :email, :password, :phone, :designation, :featured_image)
     end  
 
     def appointments_params

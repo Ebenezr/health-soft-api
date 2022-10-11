@@ -10,6 +10,7 @@ class Doctor < ApplicationRecord
 
     has_many :appointments, -> { order "appointment_date DESC" }, dependent: :destroy
     has_many :patients ,through: :appointments
+    has_one_attached :featured_image
 
     validates :first_name,:last_name, :email, :designation, :password, presence: true
     validates :email, uniqueness: true
