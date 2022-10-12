@@ -35,7 +35,7 @@ class PatientVitalsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_patient_vital
-      @patient_vital = PatientVital.find(params[:id])
+      @patient_vital = PatientVital.find_by_patient_id(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
