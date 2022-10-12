@@ -45,6 +45,6 @@ class CheckupsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def checkup_params
-      params.require(:checkup).permit(:patient_id, :doctor_id,:visit_id, :symptoms, :diagnosis, :advice, :checkup_date, :next_visit, :comment, :hpi)
+      params.require(:checkup).permit(:patient_id, :doctor_id,:visit_id, :symptoms, :diagnosis, :advice, :checkup_date, :next_visit, :comment, :hpi,:examinations)
     end
 end
