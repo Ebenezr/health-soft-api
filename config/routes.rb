@@ -4,8 +4,11 @@ Rails.application.routes.draw do
   resources :patients,  only: [:index, :show, :create, :update, :destroy] 
   resources :doctors,  only: [:index, :show, :create, :update, :destroy] 
   resources :nurses, only: [:index, :show, :create, :update, :destroy] 
-  resources :users, only: [:create, :show,:index, :destroy] 
+    resources :admins, only: [:index, :show, :create, :update, :destroy]
+  resources :users, only: [:create, :show, :destroy] 
   resources :patient_vitals, only: [:index, :show, :create, :update, :destroy] 
+
+  patch '/passwordreset/:email', to: "users#resetpassword"
   
   # Defines the root path route ("/")
   # root "articles#index"
