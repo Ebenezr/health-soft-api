@@ -260,15 +260,15 @@ password: admin@admin.com
 nurse:
 
 ```shell
-email: leah@gmail.com
-password: leah1990
+email: nurse@nurse.com
+password: nurse@nurse.com
 ```
 
 doctor
 
 ```shell
-emai: emmanuel@gmail.com
-password: emmanuel
+emai: doctor@doctor.com
+password: doctor@doctor.com
 ```
 
 ## How to use the project
