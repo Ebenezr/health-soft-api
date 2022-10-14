@@ -14,9 +14,9 @@ class AppointmentsController < ApplicationController
         render json: appointment
     end 
 
+    #return loged in user's appoinments
     def myappointments
         appointments = Appointment.where("doctor_id = ? OR nurse_id = ?", @user.id, @user.id)
-        # (doctor_id: @user.id)
         render json: appointments
     end
 

@@ -9,7 +9,7 @@ class Nurse < ApplicationRecord
         self.role ||= :nurse
     end
 
-    has_many :appointments
+    has_many :appointments, dependent: :destroy
 
       has_one_attached :featured_image
     
