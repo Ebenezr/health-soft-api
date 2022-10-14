@@ -2,6 +2,7 @@ class AppointmentsController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
 
     before_action :authorize, except: [:show, :index] 
+    
 
     def index
         appointments = Appointment.all
@@ -12,6 +13,12 @@ class AppointmentsController < ApplicationController
         appointment = Appointment.find(params[:id])
         render json: appointment
     end 
+
+    def myappointments
+        appointments = Appointment.where("doctor_id = ? OR nurse_id = ?", @user.id, @user.id)
+        # (doctor_id: @user.id)
+        render json: appointments
+    end
 
     def create
         appointment = Appointment.create!(appointments_params.merge(nurse:@user))

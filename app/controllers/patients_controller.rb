@@ -1,6 +1,6 @@
 class PatientsController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
-    before_action :authorize
+    before_action :authorize, except: [:show, :index] 
 
     before_action :set_patient, only: [:show, :update, :destroy]
 
