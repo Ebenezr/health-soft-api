@@ -3,14 +3,14 @@ admin = Admin.create(first_name: 'Ebenezar', last_name: 'Bukosia', email: 'admin
 
 
 puts 'seeding nurses..'
-njeri =Nurse.create(first_name: 'Michele', last_name: 'Njeri', email: 'michele@gmail.com', password_digest: '$2a$12$uoDlDVLYOkYXlJOsJDk7ye3ZPoSeJO8m.B75IRZbHuE4k.ct.KoWa', role_cd: 'nurse', phone:25478457546,designation:'Reception')
+njeri =Nurse.create(first_name: 'Michele', last_name: 'Njeri', email: 'michele@gmail.com', password_digest: '$2a$12$G/fqIztp1rSLBwjtyuGjAuFhrqChZY4JLQdyxaWNGwuB1sstTgk/W', role_cd: 'nurse', phone:25478457546,designation:'Reception')
 chep =Nurse.create(first_name: 'Rael', last_name: 'Chep', email: 'chep@gmail.com', password_digest: '$2a$12$uoDlDVLYOkYXlJOsJDk7ye3ZPoSeJO8m.B75IRZbHuE4k.ct.KoWa', role_cd: 'nurse', phone:25478458546,designation:'Intern')
 leah =Nurse.create(first_name: 'Leah', last_name: 'Karambu', email: 'leah@gmail.com', password_digest: '$2a$12$uoDlDVLYOkYXlJOsJDk7ye3ZPoSeJO8m.B75IRZbHuE4k.ct.KoWa', role_cd: 'nurse', phone:25478451546,designation:'Reception')
 aled =Nurse.create(first_name: 'Aled', last_name: 'Kingo', email: 'maxwel@gmail.com', password_digest: '$2a$12$uoDlDVLYOkYXlJOsJDk7ye3ZPoSeJO8m.B75IRZbHuE4k.ct.KoWa', role_cd: 'nurse', phone:25478451546,designation:'Reception')
-john =Nurse.create(first_name: 'John', last_name: 'Brian', email: 'brian@gmail.com', password_digest: '$2a$12$uoDlDVLYOkYXlJOsJDk7ye3ZPoSeJO8m.B75IRZbHuE4k.ct.KoWa', role_cd: 'nurse', phone:25478451546,designation:'Lab Tech')
+john =Nurse.create(first_name: 'Berverly', last_name: 'Kalesy', email: 'nurse@nurse.com', password_digest: '$2a$12$uoDlDVLYOkYXlJOsJDk7ye3ZPoSeJO8m.B75IRZbHuE4k.ct.KoWa', role_cd: 'nurse', phone:25478451546,designation:'Lab Tech')
 
 puts 'seeding doctors..'
-manu =Doctor.create(first_name: 'Emanuel', last_name: 'Baraka', email: 'emmanuel@gmail.com', password_digest: '$2a$12$QIC00AeT2IzxdggM5DssF.JSdPlo50vbLFHcOGGmM2F0IfzF2qhnm', role_cd: 'doctor', phone:25478457546,designation:'Surgion')
+manu =Doctor.create(first_name: 'Emanuel', last_name: 'Baraka', email: 'doctor@doctor.com', password_digest: '$2a$12$40qm48y6KhtGheJOohv9/OoW6XpAzpPMocMy2HeF95DvRnGarKUcy', role_cd: 'doctor', phone:25478457546,designation:'Surgion')
 doc =Doctor.create(first_name: 'Dr', last_name: "King'ori", email: 'kingori@gmail.com', password_digest: '$2a$12$uoDlDVLYOkYXlJOsJDk7ye3ZPoSeJO8m.B75IRZbHuE4k.ct.KoWa', role_cd: 'doctor', phone:25478458546,designation:'Dentist')
 kim =Doctor.create(first_name: 'Jonstone', last_name: 'Kimtai', email: 'kimatai@gmail.com', password_digest: '$2a$12$uoDlDVLYOkYXlJOsJDk7ye3ZPoSeJO8m.B75IRZbHuE4k.ct.KoWa', role_cd: 'doctor', phone:25478451546,designation:'Clinical Officer')
 max =Doctor.create(first_name: 'Maxwel', last_name: 'Wanjala', email: 'maax@gmail.com', password_digest: '$2a$12$uoDlDVLYOkYXlJOsJDk7ye3ZPoSeJO8m.B75IRZbHuE4k.ct.KoWa', role_cd: 'doctor', phone:25478451546,designation:'Intern')
