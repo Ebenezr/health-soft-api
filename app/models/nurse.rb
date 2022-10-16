@@ -13,15 +13,26 @@ class Nurse < ApplicationRecord
 
       has_one_attached :featured_image
     
-    validates :first_name,:last_name, :email, :designation, :password, presence: true
+    validates :first_name,:last_name, :email, :designation, presence: true
     validates :email, uniqueness: true
-    validates :password, 
-        length:  {minimum: 6} 
-        # if: -> {new_record? || !password.nil?}
+   
     validates :email, format: {with: URI::MailTo::EMAIL_REGEXP }
     validates :phone, :presence => true,
                  :numericality => true,
                  :length => { :minimum => 9, :maximum => 15 }
+    # password format validations
+    PASSWORD_FORMAT = /\A
+    (?=.*[A-Z]) # Must contain an uppercase character
+    (?=.*[a-z]) # Must contain a lowercase character
+    (?=.*\d) # Must contain a digit
+    (?=.*[[:^alnum:]]) # Must contain a symbol
+  /x
 
+    # validates :password, presence: false, unless:-> {id.blank?}
+    validates :password, length:  {minimum: 6}, unless: ->{ password.blank? } ,
+             if:  -> { new_record? || !password.blank? },
+             format: { with: PASSWORD_FORMAT, :message => 'Password must include: 1 uppercase, 1 lowercase, 1 digit and 1 special character' }, 
+             unless: ->{ password.blank? }
+   
     has_secure_password
 end
