@@ -6,7 +6,15 @@ class Patient < ApplicationRecord
 
    
     has_many :patient_vitals, dependent: :destroy
-    accepts_nested_attributes_for :patient_vitals, reject_if: :all_blank, allow_destroy: true
+
+    before_validation :downcase_email
+
+    accepts_nested_attributes_for :patient_vitals, reject_if: :all_blank, allow_destroy: true   
+
+    # downcase email if upercase
+    def downcase_email
+        email.try(:downcase!)
+    end
 
     validates :first_name, :last_name, :marital_status, :gender, :dob, presence: true
     # validates :gender, inclusion: {in: ['Male','Female']}

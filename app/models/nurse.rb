@@ -1,6 +1,11 @@
 class Nurse < ApplicationRecord
 
+      before_validation :downcase_email
 
+      # downcase email if upercase
+      def downcase_email
+        email.try(:downcase!)
+      end
 
      as_enum :role, [:admin, :doctor, :nurse], map: :string
     after_initialize :set_default_role, :if => :new_record?
@@ -28,11 +33,16 @@ class Nurse < ApplicationRecord
     (?=.*[[:^alnum:]]) # Must contain a symbol
   /x
 
-    # validates :password, presence: false, unless:-> {id.blank?}
+  
+
     validates :password, length:  {minimum: 6}, unless: ->{ password.blank? } ,
              if:  -> { new_record? || !password.blank? },
              format: { with: PASSWORD_FORMAT, :message => 'Password must include: 1 uppercase, 1 lowercase, 1 digit and 1 special character' }, 
              unless: ->{ password.blank? }
+
+    #checks password cornfirmation
+    validates :password, confirmation: true
+    validates :password_confirmation, confirmation: true
    
     has_secure_password
 end
