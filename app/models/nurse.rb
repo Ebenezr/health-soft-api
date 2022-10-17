@@ -43,6 +43,13 @@ class Nurse < ApplicationRecord
     #checks password cornfirmation
     validates :password, confirmation: true
     validates :password_confirmation, confirmation: true
+
    
     has_secure_password
+
+
+    def image_url
+      Rails.application.routes.url_helpers.url_for(featured_image) if featured_image.attached?
+    end
+
 end

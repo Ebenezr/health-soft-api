@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "2.7.0"
+ruby "3.1.2"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4"
@@ -42,3 +42,4 @@ gem "faker", "~> 2.23"
 gem 'simple_enum', '~> 2.3.0' , require: 'simple_enum/mongoid'
 
 gem 'cloudinary'
+gem "jsonapi-serializer", "~> 2.2"
