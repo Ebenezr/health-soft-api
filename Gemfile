@@ -43,3 +43,9 @@ gem 'simple_enum', '~> 2.3.0' , require: 'simple_enum/mongoid'
 
 gem 'cloudinary'
 gem "jsonapi-serializer", "~> 2.2"
+
+#deployment gems
+
+ gem 'sprockets', '~>3.0'
+
+ gem "sprockets-rails"
