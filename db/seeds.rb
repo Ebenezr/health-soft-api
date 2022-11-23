@@ -17,13 +17,13 @@ max =Doctor.create(first_name: 'Maxwel', last_name: 'Wanjala', email: 'maax@gmai
 mumo =Doctor.create(first_name: 'Paul', last_name: 'Mumo', email: 'mumo@gmail.com', password: 'doctor@doctor.com', role_cd: 'doctor', phone:78451546,designation:'Lab Tech')
 
 puts 'seeding patients...'
-one = Patient.create(  national_id: 3853466, first_name: "Alex", last_name: "Ndong'u", gender: "Male", dob: "1985-03-24", marital_status: "Maried", phone: "0778459615", email: "alex@mail.com", address: "Jericho",county: "Nairobi", estate: "Social Hall")
-two = Patient.create(  national_id: 3854566, first_name: "Colins", last_name: "Nyaboro", gender: "Male", dob: "1999-11-24", marital_status: "Single", phone: "0778459615", email: "colo@gail.com", address: "Buruburu",county: "Nairobi", estate: "Phase 1")
-there = Patient.create(  national_id: 3846576, first_name: "Japheth", last_name: "Mald", gender: "Male", dob: "2002-03-24", marital_status: "Single", phone: "0778455465", email: "japhe@mail.com", address: "Jericho",county: "Nairobi", estate: "Salem")
-four = Patient.create(  national_id: 3853084, first_name: "Mercy", last_name: "Njeri", gender: "Female", dob: "2001-03-14", marital_status: "Single", phone: "0774569615", email: "mercy@yahoo.com", address: "Jericho",county: "Nairobi", estate: "Odinga")
-five = Patient.create(  national_id: 3846466, first_name: "Joy", last_name: "Ngei", gender: "Female", dob: "1988-03-04", marital_status: "Single", phone: "07784234415", email: "joyce@mail.com", address: "Ngong",county: "Nairobi", estate: "Bree")
-six = Patient.create(  national_id: 3846546, first_name: "Alice", last_name: "Onyango", gender: "Female", dob: "1965-01-24", marital_status: "Maried", phone: "0778423515", email: "alice@hotmail.com", address: "Rongai",county: "Nairobi", estate: "Musst")
-seven = Patient.create(  national_id: 3538641, first_name: "Olive", last_name: "bunei", gender: "Female", dob: "1985-05-24", marital_status: "Maried", phone: "0778458665", email: "olive@mail.com", address: "Thika",county: "Nairobi", estate: "Dawa")
+one = Patient.create(  national_id: 3853466, first_name: "Alex", last_name: "Ndong'u", gender: "Male", dob: "1985-03-24", marital_status: "Maried", phone: 778459615, email: "alex@mail.com", address: "Jericho",county: "Nairobi", estate: "Social Hall")
+two = Patient.create(  national_id: 3854566, first_name: "Colins", last_name: "Nyaboro", gender: "Male", dob: "1999-11-24", marital_status: "Single", phone: "778459615, email: "colo@gail.com", address: "Buruburu",county: "Nairobi", estate: "Phase 1")
+there = Patient.create(  national_id: 3846576, first_name: "Japheth", last_name: "Mald", gender: "Male", dob: "2002-03-24", marital_status: "Single", phone: 778455465, email: "japhe@mail.com", address: "Jericho",county: "Nairobi", estate: "Salem")
+four = Patient.create(  national_id: 3853084, first_name: "Mercy", last_name: "Njeri", gender: "Female", dob: "2001-03-14", marital_status: "Single", phone: 774569615, email: "mercy@yahoo.com", address: "Jericho",county: "Nairobi", estate: "Odinga")
+five = Patient.create(  national_id: 3846466, first_name: "Joy", last_name: "Ngei", gender: "Female", dob: "1988-03-04", marital_status: "Single", phone: 784234415, email: "joyce@mail.com", address: "Ngong",county: "Nairobi", estate: "Bree")
+six = Patient.create(  national_id: 3846546, first_name: "Alice", last_name: "Onyango", gender: "Female", dob: "1965-01-24", marital_status: "Maried", phone: 778423515, email: "alice@hotmail.com", address: "Rongai",county: "Nairobi", estate: "Musst")
+seven = Patient.create(  national_id: 3538641, first_name: "Olive", last_name: "bunei", gender: "Female", dob: "1985-05-24", marital_status: "Maried", phone: 778458665, email: "olive@mail.com", address: "Thika",county: "Nairobi", estate: "Dawa")
 
 puts 'seeding patient vitals...'
 er = PatientVital.create( patient_id:1, bp_systolic:120, bp_diastolic:80, temperature:37, notes: "Patient has normal temperature")
