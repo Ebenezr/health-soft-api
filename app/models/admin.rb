@@ -23,7 +23,7 @@ class Admin < ApplicationRecord
     validates :email, format: {with: URI::MailTo::EMAIL_REGEXP }
     validates :phone, :presence => true,
                  :numericality => true,
-                 :length => { :minimum => 9, :maximum => 15 }
+                 :length => { :minimum => 9, :maximum => 16 }
 
      # password format validations
     PASSWORD_FORMAT = /\A
