@@ -7,7 +7,7 @@ class CreateDoctors < ActiveRecord::Migration[7.0]
       t.string :email
       t.string :password_digest
       t.string :designation
-      
+      t.string :role_cd
       
       t.timestamps
     end

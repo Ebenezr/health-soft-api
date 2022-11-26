@@ -1,5 +1,5 @@
 puts 'seeding admins..'
-admin = Admin.create(first_name: 'Ebenezar', last_name: 'Bukosia', email: 'admin@admin.com', password: '"admin@admin.com"', role_cd: 'admin',phone:78458546,designation:'Admin')
+admin = Admin.create(first_name: 'Ebenezar', last_name: 'Bukosia', email: 'admin@admin.com', password: "admin@admin.com", role_cd: "admin",phone:78458546,designation:'Admin')
 
 
 puts 'seeding nurses..'

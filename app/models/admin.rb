@@ -34,10 +34,10 @@ class Admin < ApplicationRecord
   /x
 
     # validates :password, presence: false, unless:-> {id.blank?}
-    validates :password, length:  {minimum: 6}, unless: ->{ password.blank? } ,
-             if:  -> { new_record? || !password.blank? },
-             format: { with: PASSWORD_FORMAT, :message => 'Password must include: 1 uppercase, 1 lowercase, 1 digit and 1 special character' }, 
-             unless: ->{ password.blank? }
+    # validates :password, length:  {minimum: 6}, unless: ->{ password.blank? } ,
+    #          if:  -> { new_record? || !password.blank? },
+    #          format: { with: PASSWORD_FORMAT, :message => 'Password must include: 1 uppercase, 1 lowercase, 1 digit and 1 special character' }, 
+    #          unless: ->{ password.blank? }
     
     #checks password cornfirmation
     validates :password, confirmation: true
